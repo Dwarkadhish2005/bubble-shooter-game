@@ -334,6 +334,9 @@ public class BubbleShooterGame extends JPanel implements ActionListener, MouseLi
     private List<Point> calculateTrajectory(int startX, int startY, int targetX, int targetY) {
         List<Point> points = new ArrayList<>();
         
+
+
+
         double dx = targetX - startX;
         double dy = targetY - startY;
         double distance = Math.sqrt(dx * dx + dy * dy);
@@ -391,7 +394,6 @@ public class BubbleShooterGame extends JPanel implements ActionListener, MouseLi
     }
     
     private void drawEnhancedUI(Graphics2D g2d) {
-        // Top UI panel
         RoundRectangle2D uiPanel = new RoundRectangle2D.Double(10, 10, WINDOW_WIDTH - 20, UI_HEIGHT - 20, 15, 15);
         
         GradientPaint panelGradient = new GradientPaint(0, 10, primaryColor, 0, UI_HEIGHT, secondaryColor);
@@ -408,10 +410,8 @@ public class BubbleShooterGame extends JPanel implements ActionListener, MouseLi
         // Level section  
         drawUISection(g2d, 200, 25, "LEVEL", String.valueOf(level), accentColor);
         
-        // Bubbles remaining
         drawUISection(g2d, 370, 25, "BUBBLES", String.valueOf(bubblesRemaining), warningColor);
         
-        // Progress bar
         drawProgressBar(g2d, 550, 35, 300, 20);
     }
     
